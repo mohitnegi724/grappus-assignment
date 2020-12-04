@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import SingleSong from '../Containers/SingleSong';
+import SongCard from './Components/SongCard';
 import songs from '../Data/topSongsData.json';
 import '../Styles/TopSongs.css';
 
@@ -14,7 +14,7 @@ export default function TopSongs() {
       <div className={subarray.length === 3? 'three-items columns': 'two-items columns'} key={index} >
         {
           // Mapping Through Every item of Subarray
-          subarray.map((songObj, index) =><SingleSong data={songObj} key={index}/>)
+          subarray.map((songObj, index) =><SongCard data={songObj} key={index}/>)
         }
       </div>
     )
