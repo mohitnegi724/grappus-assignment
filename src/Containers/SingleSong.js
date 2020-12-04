@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Styles/TopSongs.css'
 
 function SingleSong({ data }) {
   const {trackId, trackName, artworkUrl100 } = data;

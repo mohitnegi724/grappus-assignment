@@ -11,7 +11,7 @@ export default function TopSongs() {
   // Using printSubArrSongs Function to Print the inside items of Subarrays
   function printSubArrSongs (subarray, index) {
     return(
-      <div className={subarray.length === 3? 'threeItems columns': 'twoItems columns'} key={index} >
+      <div className={subarray.length === 3? 'three-items columns': 'two-items columns'} key={index} >
         {
           // Mapping Through Every item of Subarray
           subarray.map((songObj, index) =><SingleSong data={songObj} key={index}/>)
@@ -36,7 +36,9 @@ export default function TopSongs() {
   return (
     <div className="top-songs-container">
       {/* Title Of The Top Song Component */}
-      <h2 id="top-songs-title"> Top 20 Songs Of 2020 </h2>
+      <h2 id="top-songs-title" data-aos="zoom-out">
+        Top 20 Songs Of 2020
+      </h2>
       <div className="songs-container">
         {/* Printing All Songs from The array */}
         { topSongsArray.length? topSongsArray.map((subArr, index)=> printSubArrSongs(subArr, index)) : <span> Loading...</span>}

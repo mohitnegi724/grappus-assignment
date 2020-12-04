@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <Fragment>
-      {/* Header/ First Section */}
+      {/* Header/ Showreel Section */}
       <ShowReel />
       {/* Top 20 Songs */}
       <TopSongs />
