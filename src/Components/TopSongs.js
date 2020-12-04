@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import songs from '../Data/topSongsData.json'
-import '../Styles/TopSongs.css'
+import React, { useEffect, useState } from 'react';
+import SingleSong from '../Containers/SingleSong';
+import songs from '../Data/topSongsData.json';
+import '../Styles/TopSongs.css';
 
 
 export default function TopSongs() {
@@ -12,14 +13,8 @@ export default function TopSongs() {
     return(
       <div className={subarray.length === 3? 'threeItems columns': 'twoItems columns'} key={index} >
         {
-          subarray.map(({trackId, trackName, artworkUrl100 }) =>{
-            return (
-              <div className="single-song-container" key={trackId}> 
-                <img src={artworkUrl100} alt={trackName} className="song-thumb" data-aos="fade-up"/>
-                <h4 className="trackName" data-aos="fade-up">{ trackName }</h4>
-              </div>
-            )}
-          )
+          // Mapping Through Every item of Subarray
+          subarray.map((songObj, index) =><SingleSong data={songObj} key={index}/>)
         }
       </div>
     )
@@ -44,7 +39,7 @@ export default function TopSongs() {
       <h2 id="top-songs-title"> Top 20 Songs Of 2020 </h2>
       <div className="songs-container">
         {/* Printing All Songs from The array */}
-        { topSongsArray.map((subArr, index)=> printSubArrSongs(subArr, index)) }
+        { topSongsArray.length? topSongsArray.map((subArr, index)=> printSubArrSongs(subArr, index)) : <span> Loading...</span>}
       </div>
     </div>
   )
